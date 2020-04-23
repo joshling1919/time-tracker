@@ -1,13 +1,12 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
-#[macro_use]
-extern crate rocket;
+extern crate dotenv;
 
-#[get("/<name>")]
-fn index(name: String) -> String {
-    format!("hello {}", name)
-}
+use dotenv::dotenv;
+
+mod router;
 
 fn main() {
-    rocket::ignite().mount("/", routes![index]).launch();
+    dotenv().ok();
+    router::create_routes();
 }
