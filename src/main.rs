@@ -3,9 +3,12 @@
 #[macro_use]
 extern crate rocket;
 
-#[get("/<name>")]
-fn index(name: String) -> String {
-    format!("hello {}", name)
+use self::handler::*;
+
+#[get("/sessions")]
+fn index() -> String {
+    get();
+    format!("hello world")
 }
 
 fn main() {
