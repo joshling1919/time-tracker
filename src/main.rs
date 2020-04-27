@@ -3,7 +3,8 @@
 #[macro_use]
 extern crate rocket;
 
-use self::handler::*;
+mod handler;
+use self::handler::get;
 
 #[get("/sessions")]
 fn index() -> String {
