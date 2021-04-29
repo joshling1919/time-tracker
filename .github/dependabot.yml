@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: cargo
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: rocket
+    versions:
+    - 0.4.6
+  - dependency-name: diesel
+    versions:
+    - 1.4.5
